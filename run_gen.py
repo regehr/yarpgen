@@ -916,7 +916,7 @@ class TestRun(object):
         self.build_cmd = " ".join(str(p) for p in build_params_list)
         self.build_ret_code, self.build_stdout, self.build_stderr, self.is_build_time_expired, self.build_elapsed_time = \
             common.run_cmd(build_params_list, compiler_timeout, self.proc_num, compiler_mem_limit)
-        unique_filename = os.path.join("/", "home", "vlivinsk", "testing", str(uuid.uuid4().hex))
+        unique_filename = os.path.join("/", "home", "regehr", "yarpgen", "testing", str(uuid.uuid4().hex))
         with open(unique_filename + ".out", "wb") as f:
             f.write(self.build_stdout)
             f.write(self.build_stderr)
