@@ -40,6 +40,8 @@ import common
 import gen_test_makefile
 import blame_opt
 
+import uuid
+
 res_dir = "result"
 process_dir = "process_"
 creduce_bin = "creduce"
@@ -914,6 +916,10 @@ class TestRun(object):
         self.build_cmd = " ".join(str(p) for p in build_params_list)
         self.build_ret_code, self.build_stdout, self.build_stderr, self.is_build_time_expired, self.build_elapsed_time = \
             common.run_cmd(build_params_list, compiler_timeout, self.proc_num, compiler_mem_limit)
+        unique_filename = os.path.join("/", "home", "vlivinsk", "testing", str(uuid.uuid4().hex))
+        with open(unique_filename + ".out", "wb") as f:
+            f.write(self.build_stdout)
+            f.write(self.build_stderr)
         # update status and stats
         if self.is_build_time_expired:
             self.stat.update_target_runs(self.optset, compfail_timeout)

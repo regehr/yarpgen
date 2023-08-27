@@ -29,7 +29,7 @@ const uint32_t MAX_ALLOWED_INT_TYPES = 3;
 
 const uint32_t MAX_ARITH_DEPTH = 5;
 const uint32_t MAX_TOTAL_EXPR_COUNT = 50000000;
-const uint32_t MAX_FUNC_EXPR_COUNT = 10000000;
+const uint32_t MAX_FUNC_EXPR_COUNT = 10000;
 
 const uint32_t MIN_SCOPE_STMT_COUNT = 5;
 const uint32_t MAX_SCOPE_STMT_COUNT = 10;
